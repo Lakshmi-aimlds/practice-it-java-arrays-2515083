@@ -1,9 +1,31 @@
+import java.util.Arrays;
+
 public class App {
 
   public static void main(String[] args) {
-    double[] lotteryNums = { 45, 12, 3, 38, 21 };// new double[5];
-    System.out.println(lotteryNums[2]);
-    lotteryNums[2] = 40;
-    System.out.println(lotteryNums[2]);
+    int[] arr = new int[] { 92, 12, 38, 74 };
+    for (int i = 0; i < arr.length; i++) {
+      System.out.println(arr[i]);
+    }
+    System.out.println();
+    for (int i = arr.length - 1; i >= 0; i--) {
+      System.out.println(arr[i]);
+    }
+    System.out.println();
+    for (int i = arr.length - 1; i >= 0; i = i - 2) {
+      System.out.println(arr[i]);
+    }
+    System.out.println();
+
+    for (int item : arr) {
+      System.out.println(item);
+    }
+
+    // Java Streams
+    Arrays.stream(arr).forEach(System.out::println);
+    // Arrays.stream(arr).filter();
+    System.out.println("Avg: " + Arrays.stream(arr).average());
+    System.out.println("Sum: " + Arrays.stream(arr).sum());
+
   }
 }
